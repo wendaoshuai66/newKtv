@@ -1,0 +1,29 @@
+  body, html, #root, .login{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .login-logo {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    margin-bottom: 24px;
+    font-size: 36px;
+  }
+  #components-form-demo-normal-login .login-form {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding-top: 10%;
+    max-width: 300px !important;
+  }
+  #components-form-demo-normal-login .login-form-forgot {
+    float: right !important;
+  }
+  #components-form-demo-normal-login .login-form-button {
+    width: 100% !important;
+  }

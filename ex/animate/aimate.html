@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.jss"></script>
+</head>
+<body>
+<div style="height: 20px;background: red"></div>
+<script>
+    $({start:0}).animate({start:100},{
+        duration:5000,
+        step:function (e) {
+            console.log(e)
+            $("div").css("width",e)
+        }
+    })
+</script>
+</body>
+</html>

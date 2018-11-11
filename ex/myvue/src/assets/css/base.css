@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    height:100%;
+}
+#app{
+    height: 100%;
+}
+
+.el-container.is-vertical{
+    height: 100%!important;
+}
+.table-bordered tr th{
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left!important;
+}
+.table-bordered tr td{
+    text-align: left;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="http://news.ifeng.com/a/20180114/55110226_0.shtml">buffer目的白存数据</a>
+</body>
+<script>
+let arr=[42,49,2,59,61,78,36,66,55]
+function bubblesort(arr) {
+    for(let i=0;i<arr.length;i++){
+        for(let j=0;j<arr.length-i;j++){
+            if(arr[j]>arr[j+1]){
+                var temp=arr[j+1];
+                arr[j+1]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    return arr;
+}
+function maopao(arr){
+    for(var i=0;i<arr.length;i++){
+        for(var j=0;j<arr.length-i;j++){
+            if(arr[j+1]>arr[j]){
+                var temp=arr[j+1];
+                arr[j+1]=arr[j]
+                arr[j]=temp;
+            }
+        }
+    }
+}
+/*console.log(bubblesort(arr));*/
+function insertsort(arr) {
+    var preIndex,curent;
+    for(var i=1;i<arr.length;i++){
+        preIndex=i-1;
+        curent=arr[i];
+        while (preIndex>=0 && arr[preIndex]>curent){
+            arr[preIndex+1]=arr[preIndex];
+            preIndex--;
+        }
+        arr[preIndex+1]=curent;
+    }
+    return arr;
+}
+console.log(insertsort(arr))
+function selectsort(arr) {
+    var minIndex,temp;
+    for (var i=0;i<arr.length-1;i++){
+        minIndex=i;
+        for (var j=i+1;j<arr.length;j++){
+            if(arr[j]<arr[minIndex]){
+                j=minIndex;
+            }
+            temp=arr[i];
+            arr[i]=arr[minIndex];
+            arr[minIndex]=temp;
+        }
+    }
+    return arr;
+}
+console.log(selectsort(arr))
+
+
+
+for (let  i = 1; i <= 5; i++) {
+    setTimeout( function timer() {
+        console.log(i);
+    }, 1000 );
+}
+</script>
+</html>

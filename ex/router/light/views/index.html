@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Document</title>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+<script src="/js/vue.js"></script>
+<script src="/js/vue-router.js"></script>
+  <style>
+   *{
+    margin: 0;
+    padding: 0;
+   }
+   .title{
+    width: 800px;
+    height: 40px;
+    margin: auto;
+    background: #bbbbbb;
+   }
+   .title h1{
+       width: 500px;
+       height: 40px;
+       text-align: center;
+       line-height: 40px;
+       font-size: 10px;
+       margin: auto;
+   }
+   .wait{
+       width: 5px;
+       height: 20px;
+       background: rgba(0,0,0,0.7);
+       position: fixed;
+       left: 0;
+       right: 0;
+       top: 0;
+       bottom: 0;
+       margin: auto;
+       animation: wait 1s linear infinite forwards;
+   }
+      .wait:before{
+          content: "";
+          width: 5px;
+          height: 20px;
+          background: rgba(0,0,0,0.7);
+          position: absolute;
+          left: 10px;
+          top:0;
+          animation: wait 0.5s linear infinite forwards;
+      }
+      .wait:after{
+          content: "";
+          width: 5px;
+          height: 20px;
+          background: rgba(0,0,0,0.7);
+          position: absolute;
+          left: -10px;
+          top:0;
+          animation: wait 1.5s linear infinite forwards;
+      }
+      @keyframes wait {
+         0%{
+             transform: scale(1,1.5);
+         }
+          100%{
+              transform: scale(1,1.2);
+          }
+      }
+      .infouse{
+          width: 500px;
+          height: 300px;
+          margin: auto;
+          bottom: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          position: fixed;
+          animation: infouse 5s ease forwards;
+          text-align: center;
+          line-height: 300px;
+          font-weight: bold;
+      }
+      @keyframes infouse {
+        0%{
+            opacity: 1;
+        }
+       100%{
+           opacity: 0;
+       }
+      }
+  </style>
+</head>
+ <body> 
+<div id="app">
+ <div class="title">
+  <h1>一个侦删改查的表格 [<a href="#/">首页</a>][<a href="#/add">添加</a>]</h1>
+     <router-view>
+     </router-view>
+ </div>
+</div>
+</body>
+ <script src="/js/component.js"></script>
+ <script src="/js/routes.js"></script>
+ <script src="/js/app.js"></script>
+</html>

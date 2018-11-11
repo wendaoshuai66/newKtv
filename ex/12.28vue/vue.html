@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{num}}
+    <input type="text" v-model="num">
+   <!-- <span v-on:click="aa">{{one}}+</span><span v-on:click="bb">{{two}}</span>={{three}}-->
+    <costom v-bind:con="mesage" :num1="num"></costom>
+</div>
+<script>
+    Vue.component("costom",{
+        props:{
+            num1:{
+                type: Object,
+                default: function () {
+                    return { message: 'hello' }
+                }
+            }
+        },
+        template:`<div @click="cc()">{{num2}}</div>`,
+        data(){
+            return{
+                name:this.con,
+                num2:this.num1
+            }
+        },
+        methods:{
+            cc(){
+                this.name="lisi"
+            }
+        }
+    })
+    new Vue({
+        el:"#app",
+        data:{
+            one:0,
+            two:0,
+            three:0,
+            mesage:"abcd",
+            num:"abcd"
+        },
+        methods:{
+            aa(){
+                this.one=this.one*1+1;
+            },
+            bb(){
+                this.two=this.two*1+1;
+            }
+        },
+        watch:{
+            one(val1,val2){
+                this.three=val1+this.two*1;
+            },
+            two(val1,val2){
+                this.three=this.one*1+val1;
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        nav{
+            width: 500px;
+            height: 50px;
+            border: 1px solid #888888;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .contanter{
+            width: 500px;
+            height: 30px;
+            line-height: 30px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="index.html#index">首页</a>
+    <a href="info.html#info">公司简介</a>
+    <a href="cont.html#con">公司发展</a>
+</nav>
+<div class="contanter">
+首页
+</div>
+</body>
+<script>
+    var link=document.querySelectorAll('a');
+    for(let i=0;i<link.length;i++){
+        link[i].onclick=function () {
+            let ajax=new XMLHttpRequest();
+            ajax.onload=function () {
+                var href=this[i].getAttribute("href");
+
+            }
+            var url=
+            ajax.open("get",url);
+            ajax.send();
+            return false;
+        }
+    }
+</script>
+</html>
